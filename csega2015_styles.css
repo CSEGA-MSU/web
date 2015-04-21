@@ -1,0 +1,148 @@
+/* CSS Document */
+
+html {
+	height:100%;
+}
+
+body {
+	margin: 0px;
+	margin-left: auto;
+    margin-right: auto;
+	background-image: url("images/msu_logo.png"), url("images/title.png"),url("images/body-background-top.png");
+	background-position:top 50px right 50px, top left, top;
+	background-repeat: no-repeat;
+	background-size:200px,800px 400px, 100% 1500px;
+	overflow-y:scroll;
+	height:100%;
+} 
+h1 {
+	text-addgn:left;
+	border-bottom: 1px soddd #bbbbbb;
+}
+h2 {
+	text-addgn:left;
+}
+p {
+	text-align:left;
+}
+
+header {
+	height:150px;
+}
+
+nav {
+	display: block;
+	width: 60%;
+	min-width:510px;
+	margin-left: auto;
+    margin-right: auto;
+	padding: 20px 10px 0px 10px;
+	text-align:center;
+	background-image:url("images/nav-background.png");
+	background-size:100% 100%;
+	border-radius: 30px 30px 0px 0px;
+	border-left: 3px solid #d2c8bd;
+	border-right: 3px solid #d2c8bd;
+	border-top: 3px solid #d2c8bd;
+	box-shadow: 10px 10px 5px grey;
+}
+nav a, nav a:visited {
+	display:inline-block; 
+	font-weight: bold;
+	text-decoration: none;
+	padding: 15px 10px 10px 10px; 
+	color:white;
+	border-radius: 5px 40px 0px 0px;
+	border-width: 6px;
+	border-style: solid;
+	margin:0px 5px 0px 5px;
+	border-color: rgb(0,80,20) rgb(0,80,20) rgb(0,102,51) rgb(0,80,20);
+    background-color:rgb(0,102,51);
+	font-color:white;
+}
+
+a{
+	color:rgb(0,102,51);
+}
+
+a:visited{
+	color:#008183;
+}
+
+section {
+	display: block;
+	width: 60%;
+	min-width:510px;
+	margin-left: auto;
+    margin-right: auto;
+	background-color:white;
+	padding: 10px;
+	border-left: 3px solid #d2c8bd;
+	border-right: 3px solid #d2c8bd;
+	box-shadow: 10px 10px 5px grey;
+}
+section2{
+	display: block;
+	width: 62%;
+	min-width:530px;
+	margin-left: auto;
+    margin-right: auto;	
+	padding:7px;	
+	background-image:url("images/border.png");
+	background-size: 100% 100%;
+	box-shadow: 10px 10px 5px grey;
+}
+.wrapper {
+	min-height: 100%;
+	margin: 0 auto -150px; /* the bottom margin is the negative value of the footer's height */
+}
+.push {
+	height: 150px; /* '.push' must be the same height as 'footer' */
+}
+footer {
+	display: block;
+	height:150px;
+	text-align:left;
+	background-image: url("images/body-background-bottom.png");
+	background-position:center bottom;
+	background-repeat: no-repeat;
+	background-size:100% 135px;
+}
+#contents{
+	width:75%;
+	background-color:#cccccc;
+	padding:10px;
+	border-radius: 20px 20px 20px 20px;
+	border-width: 4px;
+	border-style: solid;
+	border-color:#aaaaaa;
+}
+#left{
+	float: right;
+}
+#resize{
+	height:600px;
+}
+.quoteBox{
+	width:75%;
+	margin-left: auto ;
+    margin-right: auto ;
+	margin-bottom:20px;
+}
+.quoteTitle{
+	text-align:center;
+	font-weight: bold;	
+}
+.quote{
+	text-align:center;
+	font-style: italic;	
+}
+
+.quote img{
+	max-width:100%;	
+}
+
+.citation{
+	text-align:right;
+	font-size:smaller;
+}
