@@ -1,0 +1,157 @@
+% Masters Thesis LaTeX template
+% By Chad R. Meiners
+% Disclaimer:  The thesis formatting rules change.  Using this
+% template does not guarantee that the thesis will be formatted
+% correctly.  I don't even guaruntee that it will work.  I am provide
+% this template in the hope that it is useful.  So if this
+% template gives you grief, feel free to discard it and write your
+% own as this is what I did to the template I found.  
+%
+% The philosophy of this template is to change a minimum of the default
+% settings.  In general, I have found that LaTeX does a very good job
+% of formatting documents to comply with the thesis requirements.
+% By changing as little as possible, I let LaTeX do most of
+% the important work.  Hopefully, this means that the template will be
+% useful to more than one person.
+%
+% This template works with the TeX Live distribution from CTUG.  I
+% doubt that it will work on arctic because arctic is unlikely to have
+% the tocloft package.
+
+\documentclass[12pt,letterpaper,oneside,openany]{book}
+% Page formatting
+\pagestyle{plain}
+%\setlength{\hoffset}{0.5in}
+%\addtolength{\textwidth}{-0.5in}
+\setlength{\oddsidemargin}{0.5in}
+\setlength{\evensidemargin}{0.5in}
+\setlength{\topmargin}{0.0in}
+\setlength{\headheight}{0.0in}
+\setlength{\headsep}{0.0in}
+\setlength{\topskip}{0.0in}
+\setlength{\textheight}{9.0in}
+\setlength{\textwidth}{5.917in} % allow a twelfth of an inch margin for badness
+\setlength{\footskip}{0.5in}
+% double spacing
+\renewcommand{\baselinestretch}{1.5}
+% End Page Formatting
+
+% Environment for fixing table of contents and bibligraphy etc...
+% Create a headheight and typeset the title in the header.  Alter the
+% pagestyle then.
+\usepackage{tocloft}
+% end of fix
+
+\bibliographystyle{plain}
+
+% Trying to fix bib
+\newcommand{\BIBNAME}{\centerline{BIBLIOGRAPHY}}
+\newcommand{\CONTENTSNAME}{\centerline{TABLE OF CONTENTS}}
+\newcommand{\LISTTABLENAME}{\centerline{LIST OF TABLES}}
+\newcommand{\LISTFIGURENAME}{\centerline{LIST OF FIGURES}}
+\renewcommand{\bibname}{\protect{\mdseries\normalsize{\BIBNAME}}} 
+\renewcommand{\contentsname}{\protect{\CONTENTSNAME}}
+\setlength{\cftbeforetoctitleskip}{-0.19in}
+\setlength{\cftaftertoctitleskip}{2.0\baselineskip}
+\renewcommand{\cfttoctitlefont}{}
+\renewcommand{\cftaftertoctitle}{}
+\setlength{\cftbeforelottitleskip}{-0.19in}
+\setlength{\cftafterlottitleskip}{2.0\baselineskip}
+\renewcommand{\cftlottitlefont}{}
+\renewcommand{\cftafterlottitle}{}
+\setlength{\cftbeforeloftitleskip}{-0.19in}
+\setlength{\cftafterloftitleskip}{2.0\baselineskip}
+\renewcommand{\cftloftitlefont}{}
+\renewcommand{\cftafterloftitle}{}
+\renewcommand{\listtablename}{\protect{\LISTTABLENAME}}
+\renewcommand{\listfigurename}{\protect{\LISTFIGURENAME}}
+%\renewcommand{\tableofcontents}{
+%  \@starttoc{toc}
+%}
+% end of fix
+
+
+%Thesis info macros
+\newcommand{\thesistitle}{%Put your title here
+}
+\newcommand{\thesisauthor}{%Put your name here
+}
+% end of thesis macros
+
+\begin{document}
+\frontmatter
+% The title page
+\thispagestyle{empty}
+  \vspace*{1in}
+  \begin{center}
+    \thesistitle{}\\
+    By\\
+    \thesisauthor{}\\
+    \vspace*{2.5in}
+    A THESIS\\[0.5\baselineskip]
+    {\setlength{\baselineskip}{0.666667\baselineskip}
+    Submitted to\\
+    Michigan State University\\
+    in partial fulfillment of the requirements\\
+    for the degree of\\}
+    MASTER OF SCIENCE IN COMPUTER SCIENCE\\
+    Department of Computer Science and Engineering\\
+    2004
+  \end{center}
+% End of title page
+\newpage%abstract
+\thispagestyle{empty}
+\begin{center}
+ABSTRACT\\
+\thesistitle{}\\
+By\\
+\thesisauthor{}\\[\baselineskip]
+\end{center}
+\input{abstract} % your abstract tex file goes here
+%\newpage%
+%TOC
+\clearpage
+{\setlength{\parskip}{0.5\baselineskip}
+\tableofcontents}
+%\newpage%
+%LOT
+\clearpage
+{\setlength{\parskip}{0.5\baselineskip}
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables}
+%\newpage%
+%LOF
+\clearpage
+{\setlength{\parskip}{0.5\baselineskip}
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures}
+\newpage%
+\mainmatter
+%
+% thess inputs are specific to my thesis
+% input your own chapters here.
+\input{intro}  
+\input{background}
+\input{architecture}
+\input{inputlanguage}
+\input{validation}
+% End of chapter inputs
+
+\appendix
+% appendices go here.
+\input{bnf}
+\input{scspec}
+\input{glossary}
+
+\backmatter
+{\renewcommand{\baselinestretch}{1.0}
+ \setlength{\parskip}{1.5\baselineskip}
+ \setlength{\baselineskip}{0.66\baselineskip}
+\newpage
+\addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
+\vspace*{4.4in}
+\BIBNAME
+\bibliography{issta} % put your own bib file here.
+}
+
+\end{document}
